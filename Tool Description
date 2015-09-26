@@ -1,0 +1,13 @@
+We created an image and depth recognition tool. Essentially, the tool can be broked down into the following components:
+
+1. An image recognition section, that can take in a complex image, and return a set of relevant tags corresponding to the image. We use the Clarifai API for this purpose. The Clarifai algorithm can be custom trained as well to learn custom concepts. As an initial test, we planned to train the model to identify basic inanimate objects in one's surroundings - stairs, tables, chairs and trashcans.
+
+2. A Dept Analyzer - We use the OpenCV API for this purpose. Two images of the object in its environment are taken from slightly displaced angles, and we run a couple of OpenCV tools on the images to produce a depth view. The depth view is a grayscale image that describes the depth of each pixel in the image. Subsequently, we attempt to calculate the approximate distance of the main object in the image from the user. One possible method to do this is to track the relative colour density by maintaining a small image at a fixed distance as a reference point for distance calculation for all images. In the future, we can use tools to erase this reference image from the final product picture.
+
+3. A text to speech generator - to describe accurately the kind of and location of the object in the user's environment.
+
+4. A platform to deploy this tool - preferably a mobile platform. Some suggestions include using a Kinect as a black-boxed camera, or two smartphones mounted on a 3D printed support.
+
+Applications of this technology include facilitating a visually impaired individual to be aware of his/her surroundings and aid him/her in navigation.
+
+This tool was modelled and designed for HackGT 2015, by Azra Ismail, Neha Nair, Keerthan Tito and Aditya Vishwanath. Dated: September 26 2015.
